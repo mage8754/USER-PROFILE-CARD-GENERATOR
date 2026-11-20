@@ -1,6 +1,8 @@
-# Profile Studio
+# USER-PROFILE-CARD-GENERATOR
 
-A responsive profile-card creator powered by a Node.js/Express REST API. Submitted form data is validated by the backend, and the card preview is rendered from the JSON profile returned by the API.
+## Profile Studio
+
+A modern full-stack User Profile Card Generator built with HTML, CSS, JavaScript, Node.js, and Express.js. Create professional profile cards with personal details, skills, photos, and social links. Features include REST API integration, backend validation, a generated-card preview, PNG download, copy functionality, and responsive design. Submitted form data is validated by the backend, and the card preview is rendered from the JSON profile returned by the API.
 
 ## Requirements
 
