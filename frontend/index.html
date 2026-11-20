@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f7fb">
+    <meta name="description" content="Create and share a polished professional profile card in seconds.">
+    <title>Profile Studio — Your professional identity</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <script defer src="/vendor/html2canvas/html2canvas.min.js"></script>
+    <script defer src="/js/script.js"></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Profile Studio home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none">
+              <path d="M16 3.5 27 9.75v12.5L16 28.5 5 22.25V9.75L16 3.5Z" fill="currentColor" opacity=".17"/>
+              <path d="M16 3.5 27 9.75v12.5L16 28.5 5 22.25V9.75L16 3.5Z" stroke="currentColor" stroke-width="1.7"/>
+              <circle cx="16" cy="12.4" r="3.3" fill="currentColor"/>
+              <path d="M9.8 22c.7-3.1 3-4.8 6.2-4.8s5.5 1.7 6.2 4.8" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="brand-name">profile<span>studio</span></span>
+        </a>
+        <div class="topbar-note"><span class="status-dot"></span> Your next introduction, perfected</div>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="hero-copy">
+            <div class="eyebrow"><span class="eyebrow-line"></span> YOUR PERSONAL BRAND, BEAUTIFULLY DONE</div>
+            <h1>Make a great first<br class="desktop-break"> <span>impression.</span></h1>
+            <p>Create your professional identity in seconds.</p>
+          </div>
+          <div class="hero-decoration" aria-hidden="true">
+            <div class="decoration-orbit orbit-one"></div>
+            <div class="decoration-orbit orbit-two"></div>
+            <div class="decoration-star">✳</div>
+            <div class="decoration-dot"></div>
+          </div>
+        </section>
+
+        <section class="workspace" aria-label="Profile creator">
+          <div class="form-panel panel">
+            <div class="panel-heading">
+              <div>
+                <div class="section-kicker">STEP 01 <span>—</span> THE ESSENTIALS</div>
+                <h2>Tell us about yourself</h2>
+                <p>A few details are all it takes to bring your profile to life.</p>
+              </div>
+              <span class="heading-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm7 8a7 7 0 0 0-14 0" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+              </span>
+            </div>
+
+            <form id="profile-form" novalidate>
+              <div class="field-grid">
+                <div class="field">
+                  <label for="name">Full name <span class="required">*</span></label>
+                  <input id="name" name="name" type="text" placeholder="e.g. Alex Morgan" autocomplete="name" maxlength="80" required>
+                  <span class="field-error" id="name-error"></span>
+                </div>
+                <div class="field">
+                  <label for="title">Professional title <span class="required">*</span></label>
+                  <input id="title" name="title" type="text" placeholder="e.g. Product Designer" maxlength="100" required>
+                  <span class="field-error" id="title-error"></span>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="bio">A little about you <span class="required">*</span></label>
+                <textarea id="bio" name="bio" rows="3" maxlength="500" placeholder="What do you do, and what are you passionate about?" required></textarea>
+                <div class="field-meta"><span class="field-error" id="bio-error"></span><span id="bio-count">0 / 500</span></div>
+              </div>
+
+              <div class="field-grid">
+                <div class="field">
+                  <label for="email">Email address <span class="required">*</span></label>
+                  <div class="input-with-icon">
+                    <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="2.5" y="4" width="15" height="12" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="m3.5 5.5 6.5 5 6.5-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
+                  </div>
+                  <span class="field-error" id="email-error"></span>
+                </div>
+                <div class="field">
+                  <label for="location">Location <span class="required">*</span></label>
+                  <div class="input-with-icon">
+                    <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M16 8.3c0 4.2-6 9-6 9s-6-4.8-6-9a6 6 0 1 1 12 0Z" stroke="currentColor" stroke-width="1.4"/><circle cx="10" cy="8" r="2" stroke="currentColor" stroke-width="1.4"/></svg>
+                    <input id="location" name="location" type="text" placeholder="e.g. Brooklyn, NY" maxlength="100" autocomplete="address-level2" required>
+                  </div>
+                  <span class="field-error" id="location-error"></span>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="skills">Your skills <span class="required">*</span></label>
+                <div class="input-with-icon">
+                  <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m10 2 2.2 4.5 5 .7-3.6 3.5.9 5-4.5-2.4-4.5 2.4.9-5L2.8 7.2l5-.7L10 2Z" stroke="currentColor" stroke-width="1.35" stroke-linejoin="round"/></svg>
+                  <input id="skills" name="skills" type="text" placeholder="Product strategy, Figma, UX research…" aria-describedby="skills-hint">
+                </div>
+                <div class="field-meta"><span id="skills-hint">Separate each skill with a comma (up to 12).</span><span class="field-error" id="skills-error"></span></div>
+              </div>
+
+              <details class="optional-details">
+                <summary><span class="summary-plus">+</span> Add a photo &amp; social links <span class="optional-label">OPTIONAL</span></summary>
+                <div class="optional-fields">
+                  <div class="field">
+                    <label for="imageUrl">Profile image URL</label>
+                    <input id="imageUrl" name="imageUrl" type="url" placeholder="https://example.com/photo.jpg" autocomplete="url">
+                    <span class="field-error" id="imageUrl-error"></span>
+                  </div>
+                  <div class="field-grid">
+                    <div class="field">
+                      <label for="linkedin">LinkedIn</label>
+                      <input id="linkedin" name="linkedin" type="url" placeholder="https://linkedin.com/in/you">
+                      <span class="field-error" id="linkedin-error"></span>
+                    </div>
+                    <div class="field">
+                      <label for="github">GitHub</label>
+                      <input id="github" name="github" type="url" placeholder="https://github.com/you">
+                      <span class="field-error" id="github-error"></span>
+                    </div>
+                  </div>
+                </div>
+              </details>
+
+              <div class="form-actions">
+                <button class="button button-primary" id="generate-button" type="submit">
+                  <span class="button-label">Generate my profile</span>
+                  <span class="button-spinner" aria-hidden="true"></span>
+                  <svg class="button-arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h12m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <button class="button button-quiet" id="reset-button" type="reset">Reset form</button>
+              </div>
+              <p class="privacy-note"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="3" y="7" width="10" height="7" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2" stroke="currentColor" stroke-width="1.2"/></svg> Your details are processed to generate your card — never stored or shared.</p>
+            </form>
+          </div>
+
+          <aside class="preview-column">
+            <div class="preview-heading">
+              <div>
+                <div class="section-kicker">STEP 02 <span>—</span> THE PREVIEW</div>
+                <h2>Your profile card</h2>
+              </div>
+              <span class="live-pill"><span></span> LIVE</span>
+            </div>
+            <div class="preview-stage" id="preview-stage">
+              <div class="empty-state" id="empty-state">
+                <div class="empty-illustration" aria-hidden="true">
+                  <div class="empty-card-shadow"></div>
+                  <div class="empty-card">
+                    <div class="empty-avatar"><svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="18" r="8" fill="currentColor" opacity=".35"/><path d="M9 42c1.6-8 7.2-12 15-12s13.4 4 15 12" fill="currentColor" opacity=".35"/></svg></div>
+                    <div class="empty-line line-name"></div>
+                    <div class="empty-line line-title"></div>
+                    <div class="empty-line line-bio"></div>
+                    <div class="empty-line line-bio short"></div>
+                    <div class="empty-chips"><i></i><i></i><i></i></div>
+                  </div>
+                  <span class="sparkle sparkle-a">✳</span><span class="sparkle sparkle-b">✦</span>
+                </div>
+                <h3>A little blank canvas</h3>
+                <p>Your profile card will appear here once<br class="desktop-break"> you’ve added your details.</p>
+                <span class="empty-hint"><span class="hint-arrow">↙</span> Start with the form on the left</span>
+              </div>
+
+              <article class="profile-card is-hidden" id="profile-card" aria-label="Generated profile card">
+                <div class="card-cover">
+                  <span class="card-orb orb-a"></span><span class="card-orb orb-b"></span>
+                  <span class="card-brand">PROFILE<span>STUDIO</span></span>
+                </div>
+                <div class="card-content">
+                  <div class="avatar-wrap">
+                    <img id="card-image" alt="Profile portrait" src="">
+                    <span class="avatar-initials" id="avatar-initials" aria-hidden="true"></span>
+                  </div>
+                  <div class="identity">
+                    <h3 id="card-name"></h3>
+                    <p id="card-title"></p>
+                  </div>
+                  <p class="card-bio" id="card-bio"></p>
+                  <div class="card-divider"></div>
+                  <div class="card-skills" id="card-skills" aria-label="Skills"></div>
+                  <div class="card-contact">
+                    <a class="contact-item" id="card-email">
+                      <span class="contact-icon"><svg viewBox="0 0 18 18" fill="none"><rect x="2" y="3.5" width="14" height="11" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="m3 5 6 4.5L15 5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span>
+                      <span class="contact-text"></span>
+                    </a>
+                    <div class="contact-item" id="card-location">
+                      <span class="contact-icon"><svg viewBox="0 0 18 18" fill="none"><path d="M14.5 7.5c0 3.7-5.5 8-5.5 8s-5.5-4.3-5.5-8a5.5 5.5 0 1 1 11 0Z" stroke="currentColor" stroke-width="1.3"/><circle cx="9" cy="7.5" r="1.8" stroke="currentColor" stroke-width="1.3"/></svg></span>
+                      <span class="contact-text"></span>
+                    </div>
+                  </div>
+                  <div class="card-socials is-hidden" id="card-socials"></div>
+                </div>
+                <div class="card-footer">MADE WITH <span>✦</span> PROFILE STUDIO</div>
+              </article>
+            </div>
+            <div class="preview-actions is-hidden" id="preview-actions">
+              <button class="button button-outline" id="copy-button" type="button">
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="7" y="7" width="10" height="11" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M13 7V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h2" stroke="currentColor" stroke-width="1.5"/></svg>
+                Copy details
+              </button>
+              <button class="button button-outline" id="download-button" type="button">
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 3v9m0 0 3.5-3.5M10 12 6.5 8.5M4 14v2a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Download PNG
+              </button>
+            </div>
+            <p class="preview-caption" id="preview-caption">A polished introduction, ready to share anywhere.</p>
+          </aside>
+        </section>
+
+        <footer class="page-footer">
+          <span>Thoughtfully made for your next big thing.</span>
+          <span class="footer-mark">PROFILE STUDIO <span>© 2026</span></span>
+        </footer>
+      </main>
+    </div>
+    <div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+  </body>
+</html>
